@@ -35,7 +35,15 @@
     margin: 12px 0;
   }
 
+  .select-input {
+    margin: 12px 0;
+  }
+
   .text-input label {
+    color: white;
+  }
+
+  .select-input label {
     color: white;
   }
 
@@ -49,7 +57,21 @@
     transition: 200ms;
   }
 
+  .select-input select {
+    width: 100%;
+    border-radius: 8px;
+    font-size: 16px;
+    padding: 12px;
+    margin-top: 6px;
+    border: 2px solid #f16122;
+    transition: 200ms;
+  }
+
   .text-input input:focus {
+    box-shadow: #f16122 4px 4px;
+  }
+
+  .select-input select:focus {
     box-shadow: #f16122 4px 4px;
   }
 
