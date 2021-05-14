@@ -134,4 +134,8 @@
     background-color: white;
     color: #f16122;
   }
+
+  .invisible {
+    display: none;
+  }
 </style>

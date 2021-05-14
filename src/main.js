@@ -15,6 +15,7 @@ const path = require("path");
 const port = process.env.PORT || 3333;
 
 const routes = require("./routes");
+const connection = require("./database/connection");
 
 app.use(require("express").static(path.join(__dirname, "frontend", "dist")));
 app.use(routes);

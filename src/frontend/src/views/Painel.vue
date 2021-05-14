@@ -12,14 +12,14 @@
         </section>
         <section class="section-2">
             <h1>Meus Projetos</h1>
-            <div class="project-item">
-                <img src="../assets/image_placeholder.png">
+            <div class="project-item" v-for="item in projects" :key="item.id" v-bind:data-id="item.id">
+                <img v-bind:src="item.dataUrl">
                 <div class="section-2-left">
                     <div>
-                        <h1>Carnaval 2023</h1>
-                        <h2>Produtor</h2>
+                        <h1>{{ item.name }}</h1>
+                        <h2>{{ item.role }}</h2>
                     </div>
-                    <h4>Status: <b>Aguardando aprovação</b></h4>
+                    <h4>Status: <b>{{ item.status }}</b></h4>
                 </div>
             </div>
         </section>
@@ -30,7 +30,16 @@
     export default {
         data() {
             return {
-                
+                projects: [
+                    {
+                        name: "Carnaval 2023",
+                        role: "Produtor",
+                        status: "Aguardando Aprovação",
+                        dataUrl: "",
+                        private: true,
+                        id: 111133
+                    }
+                ]
             }
         }
     }
@@ -122,6 +131,8 @@
 
     .painel-page .section-2 .project-item img {
         height: 118px;
+        width: 118px;
+        object-fit: cover;
         border-radius: 50%;
     }
 
@@ -153,5 +164,66 @@
         display: flex;
         justify-content: space-between;
         flex-direction: column;
+    }
+
+    @media screen and (max-width: 800px) {
+        .painel-page .section-1 .section-1-left img {
+            border-radius: 50%;
+            height: 66px;
+        }
+
+        .painel-page .section-1-left h1 {
+            margin-left: 16px;
+            margin-top: 14px;
+            font-size: 20px;
+            color: white;
+        } 
+
+        .painel-page .section-1-left h2 {
+            margin-left: 16px;
+            font-size: 16px;
+            color: white;
+            font-weight: 200;
+        } 
+
+        .painel-page .section-2 {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: auto;
+            padding: 32px;
+            max-width: 1068px;
+            width: 100%;
+        }
+
+        .painel-page .section-2 h1 {
+            font-size: 24px;
+        }
+
+        .painel-page .section-2 .project-item {
+            flex-direction: column;
+        }
+
+        .painel-page .section-2 .project-item img {
+            height: 128px;
+            width: 128px;
+            object-fit: cover;
+            border-radius: 50%;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 12px;
+        }
+
+        .painel-page .section-2 .project-item h1 {
+            font-size: 20px;
+        }
+
+        .painel-page .section-2 .project-item h2 {
+            font-size: 18px;
+        }
+
+        .painel-page .section-2 .project-item h4 {
+            font-size: 16px;
+        }
     }
 </style>

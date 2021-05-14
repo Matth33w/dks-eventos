@@ -1,3 +1,5 @@
 {
-    "tokenHubDoDev":"101744180hwvpyrsPQx183696032"
+    "tokenHubDoDev":"101744180hwvpyrsPQx183696032",
+    "mongoURIDev":"https://localhost:27017",
+    "mongoURIProduction":"https://localhost:27017"
 }
